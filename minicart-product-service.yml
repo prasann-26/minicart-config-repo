@@ -5,7 +5,20 @@ spring:
   application:
     name: minicart-product-service
 
+  datasource:
+    url: jdbc:mysql://localhost:3307/minicart_product_db
+    username: root
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka-server:8761/eureka
+      defaultZone: http://localhost:8761/eureka
