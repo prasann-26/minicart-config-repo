@@ -2,20 +2,16 @@ server:
   port: 8082
 
 spring:
-  application:
-    name: minicart-inventory-service
-
   datasource:
-    url: jdbc:mysql://mysql:3306/minicart_inventory_db
+    url: jdbc:mysql://mysql:3306/minicart
     username: root
     password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka-server:8761/eureka
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
